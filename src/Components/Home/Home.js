@@ -7,7 +7,7 @@ function Home() {
     const [movieData,setMovieData] = useState([])
 
     async function getData() {
-        let url = 'https://movies-dbb.herokuapp.com'
+        let url = process.env.REACT_APP_SERVER
         
         let response = await fetch(`${url}/trending`)
         let result = await response.json()

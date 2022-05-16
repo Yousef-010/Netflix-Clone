@@ -15,17 +15,17 @@ function Movie({singleData}) {
         setIsShowen(false)
     }
   return (
-    <Col>
+    <Col className='coll'>
 
         
-        <Card   style={{ width: '22rem' }}>
+        <Card className='thecard'  style={{ width: '22rem' } }>
         <Card.Img className='cardImg' variant="top" src={`https://image.tmdb.org/t/p/w200/${singleData.poster_path}`} />
         <Card.Body>
             <Card.Title>{singleData.title}</Card.Title>
             <Card.Text>
             {singleData.overview}
             </Card.Text>
-            <Button variant="info" onClick={handelShow} >Add TO FavList</Button>
+            <Button variant="info" onClick={handelShow} >Add to favorite</Button>
         </Card.Body>
         </Card>
         {
