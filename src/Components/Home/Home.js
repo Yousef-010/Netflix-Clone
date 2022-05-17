@@ -18,6 +18,21 @@ function Home() {
 
     }
 
+    function updateMovie (newMovie, id){
+      let updatedMovie = movieData.map(movieElement => {
+        if (movieElement.id === id) {
+          movieElement.myrate = newMovie.retComment
+          return movieElement
+        }
+        else {
+          return movieElement
+        }
+      })
+      setMovieData(updatedMovie)
+    }
+
+
+
     useEffect(()=> {
         getData()
     },[])
@@ -25,7 +40,7 @@ function Home() {
   return (
     <Container>
             {
-                (movieData.length>0 )&& <MovieList data={movieData} />
+                (movieData.length>0 )&& <MovieList data={movieData} updateMovie={updateMovie} />
             }
     </Container>
   )

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import './Movie.css'
 import { Col } from 'react-bootstrap';
 
-function Movie({singleData}) {
+function Movie({singleData,updateMovie}) {
     const [isShowen,setIsShowen]=useState(false)
     const handelShow  = () => {
         setIsShowen(true)
@@ -25,11 +25,11 @@ function Movie({singleData}) {
             <Card.Text>
             {singleData.overview}
             </Card.Text>
-            <Button variant="info" onClick={handelShow} >Add to favorite</Button>
+            <Button variant="info" onClick={handelShow} >See Details</Button>
         </Card.Body>
         </Card>
         {
-            singleData && < ModalMovie singleData={singleData} show={isShowen} handleClose={handleClose} />
+            singleData && < ModalMovie singleData={singleData} show={isShowen} handleClose={handleClose} updateMovie={updateMovie} />
         }
 
     </Col>
