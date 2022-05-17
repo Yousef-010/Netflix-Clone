@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
+import FavList from './Components/FavList/FavList';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
             
             <main>
             <Routes>
-              <Route path='/' element={<Home/>} />  
+              <Route path='/' element={<Home/>} />
+              <Route path='/FavList' element={<FavList/>} />
+
             </Routes>  
             </main> 
 
